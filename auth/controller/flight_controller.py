@@ -6,6 +6,13 @@ flight_bp = Blueprint('flight_bp', __name__)
 
 @flight_bp.route('/flights', methods=['GET'])
 def get_flights():
+    """
+        Get all flights
+        ---
+        responses:
+          200:
+            description: List of flights
+        """
     flights = Service.get_all_flights()
     return jsonify([flight.to_dict() for flight in flights]), 200
 

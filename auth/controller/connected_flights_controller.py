@@ -12,5 +12,18 @@ def delete_connected_flight(connected_flight_id):
 
 @connected_flights_bp.route('/connected_flights', methods=['GET'])
 def get_connected_flights():
+    """
+        Get all connected flights
+        ---
+        parameters:
+          - name: airline
+            in: query
+            type: string
+            required: false
+            description: Filter by airline name
+        responses:
+          200:
+            description: List of connected flights
+        """
     connected_flights = Service.get_all_connected_flights()
     return jsonify([connected_flight.to_dict() for connected_flight in connected_flights]), 200

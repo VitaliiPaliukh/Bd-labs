@@ -13,6 +13,22 @@ def create_user():
 
 @user_bp.route('/users', methods=['GET'])
 def get_users():
+    """
+        Отримати список користувачів
+        ---
+        responses:
+          200:
+            description: Успішна відповідь
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+        """
     users = UserDAO.get_all_users()  # This now returns a list of UserDTO instances
     return jsonify([user.to_dict() for user in users]), 200  # Convert to dictionary for JSON
 
