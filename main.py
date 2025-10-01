@@ -25,7 +25,7 @@ def before_request():
 
 @app.route('/')
 def home():
-    return "Welcome to the Airline Database API111111111!"
+    return "Welcome to the Airline Database APIshka!"
 
 app.register_blueprint(connected_flights_bp, url_prefix='/api')
 app.register_blueprint(user_bp, url_prefix='/api')
