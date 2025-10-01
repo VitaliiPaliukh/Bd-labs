@@ -19,6 +19,7 @@ jobs:
           key: ${{ secrets.AZURE_SSH_KEY }}
           port: 22
           script: |
-            cd /home/${{ secrets.AZURE_USER }}lab4/Bd-labs
+            cd /home/${{ secrets.AZURE_USER }}/lab4/Bd-labs
             git fetch --all
+            git reset --hard origin/lab4
             git pull origin lab4
