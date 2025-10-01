@@ -23,14 +23,6 @@ mysql = MySQL(app)
 def before_request():
     g.mysql = mysql
 
-@app.route('/test-db')
-def test_db():
-    cur = g.mysql.connection.cursor()
-    cur.execute("SHOW TABLES;")
-    tables = cur.fetchall()
-    cur.close()
-    return jsonify({'tables': tables})
-
 @app.route('/')
 def home():
     return "Welcome to the Airline Database API!"
