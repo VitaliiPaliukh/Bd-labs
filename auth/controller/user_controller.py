@@ -60,6 +60,8 @@ def get_users():
     """
         Get all users
         ---
+        tags:
+          - Users
         responses:
           200:
             description: A list of users

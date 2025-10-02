@@ -6,7 +6,7 @@ from flask import g
 class UserDAO:
     @staticmethod
     def get_all_users():
-        conn = g.mysql.connection  # Get the MySQL connection from Flask's global context
+        conn = g.mysql.connection
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM users')
         users = cursor.fetchall()
@@ -27,5 +27,4 @@ class UserDAO:
             user_id = cursor.lastrowid
             cursor.close()
 
-            # Повертаємо UserDTO для нового користувача
             return UserDTO(user_id, username, password_hash)

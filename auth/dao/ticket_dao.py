@@ -8,13 +8,12 @@ from auth.dto.user_dto import UserDTO
 class TicketDAO:
     @staticmethod
     def get_all_tickets():
-            conn = g.mysql.connection  # Отримуємо підключення до бази даних із глобального контексту Flask
+            conn = g.mysql.connection
             cursor = conn.cursor()
             cursor.execute('SELECT * FROM tickets')
             tickets = cursor.fetchall()
             cursor.close()
 
-            # Повертаємо список об'єктів TicketDTO
             return [TicketDTO(ticket[0], ticket[1], ticket[2], ticket[3], ticket[4]) for ticket in tickets]
     @staticmethod
     def get_all_flights():

@@ -7,11 +7,11 @@ from itertools import groupby
 class FlightDAO:
     @staticmethod
     def get_all_flights():
-        conn = g.mysql.connection  # Отримуємо з'єднання з базою даних
+        conn = g.mysql.connection
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM flights')
-        flights = cursor.fetchall()  # Зберігаємо результати в змінну
-        cursor.close()  # Закриваємо курсор
+        flights = cursor.fetchall()
+        cursor.close()
 
         return [
             FlightDTO(flight[0], flight[1], flight[2], flight[3], flight[4]) for flight in flights
@@ -62,7 +62,6 @@ class FlightDAO:
         cursor.execute(query)
         flights = cursor.fetchall()
 
-        # Перетворення результатів у список словників
         flights_list = [
             {
                 'departure_city': flight[0],
@@ -76,7 +75,6 @@ class FlightDAO:
 
         cursor.close()
 
-        # Групуємо за містом відправлення
         grouped_flights = defaultdict(list)
         for flight in flights_list:
             grouped_flights[flight['departure_city']].append(flight)

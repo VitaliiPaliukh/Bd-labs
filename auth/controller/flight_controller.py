@@ -9,6 +9,8 @@ def get_flights():
     """
         Get all flights
         ---
+        tags:
+          - Flights
         responses:
           200:
             description: List of flights
@@ -24,7 +26,15 @@ def delete_flight(flight_id):
 
 @flight_bp.route('/grouped-flight/', methods=['GET'])
 def get_flights_grouped_by_city():
-    """Отримуємо рейси, згруповані по містах."""
+    """
+        Get flights grouped by city
+        ---
+        tags:
+          - Flights
+        responses:
+          200:
+            description: Flights grouped by city
+        """
     grouped_flights = Service.get_flights_grouped_by_city()
     return jsonify(grouped_flights)
 
