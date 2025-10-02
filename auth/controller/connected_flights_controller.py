@@ -15,12 +15,6 @@ def get_connected_flights():
     """
         Get all connected flights
         ---
-        parameters:
-          - name: airline
-            in: query
-            type: string
-            required: false
-            description: Filter by airline name
         responses:
           200:
             description: List of connected flights

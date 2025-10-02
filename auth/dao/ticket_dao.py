@@ -74,7 +74,7 @@ class TicketDAO:
     @staticmethod
     def get_users_for_flight():
         query = """
-            SELECT u.username, u.email, u.password_hash
+            SELECT u.user_id, u.username, u.email
             FROM tickets t
             JOIN users u ON t.user_id = u.user_id
             JOIN flights f ON t.flight_id = f.flight_id

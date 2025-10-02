@@ -21,7 +21,6 @@ def delete_flight(flight_id):
     FlightDAO.delete_flight(flight_id)
     return jsonify({"message": "Flight deleted successfully"}), 200
 
-# Додаємо новий маршрут для отримання рейсів за містами
 
 @flight_bp.route('/grouped-flight/', methods=['GET'])
 def get_flights_grouped_by_city():
