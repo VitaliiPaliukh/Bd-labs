@@ -10,11 +10,15 @@ from auth.controller.ticket_controller import tickets_bp
 app = Flask(__name__)
 Swagger(app)
 
-app.config['MYSQL_HOST'] = 'vitaliisql.mysql.database.azure.com'
-app.config['MYSQL_USER'] = 'VitaliPaliukh'
-app.config['MYSQL_PASSWORD'] = 'Vitalik6837'
+app.config['MYSQL_HOST'] = 'bdlab2.mysql.database.azure.com'
+app.config['MYSQL_USER'] = 'Vitalik16'
+app.config['MYSQL_PASSWORD'] = 'Vitalik16'
 app.config['MYSQL_DB'] = 'airlinedb'
 app.config['MYSQL_PORT'] = 3306
+
+# app.config['MYSQL_CUSTOM_OPTIONS'] = {
+#     'ssl': {'ca': "C:\\Users\\vitalik\\Downloads\\DigiCertGlobalRootCA.crt (1).pem"}
+# }
 
 mysql = MySQL(app)
 
