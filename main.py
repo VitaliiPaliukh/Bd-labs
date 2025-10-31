@@ -15,7 +15,7 @@ app.config['MYSQL_USER'] = 'Vitalik16'
 app.config['MYSQL_PASSWORD'] = 'Vitalik16'
 app.config['MYSQL_DB'] = 'airlinedb'
 app.config['MYSQL_PORT'] = 3306
-
+#
 # app.config['MYSQL_CUSTOM_OPTIONS'] = {
 #     'ssl': {'ca': "C:\\Users\\vitalik\\Downloads\\DigiCertGlobalRootCA.crt (1).pem"}
 # }
@@ -40,4 +40,3 @@ app.register_blueprint(tickets_bp, url_prefix='/api/tickets')
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True, port=5000)
-#test for cdcdcd
